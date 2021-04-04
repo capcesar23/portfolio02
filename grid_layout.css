@@ -1,0 +1,180 @@
+/*configurando a página(sempre fazer isso antes)*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+body {
+    width: 100%;/*largura geral do body 100%*/
+    height: 100vh;/*altura geral do body*/
+}
+/* fim da configuração geral*/
+/*estilizando o header*/
+header{
+    width: 100%;
+    height: 100px;
+    background-color: #101010;/*cor backgrond do header*/
+    padding: 10px;
+    display: flex;
+    align-items: center;/* centralizando os itens do header*/
+    justify-content: space-between;/*deixar o menu nos extremos*/
+    flex-wrap: wrap;/* quebra as linhas quando diminuir o tamanho da tela*/
+}
+/* estilizando o menu*/
+.menu {
+    list-style: none;/* tirando o marcador das ul*/
+    display: flex;/*deixando as li uma ao lado da outra*/
+    flex-wrap: wrap;/* quebra as linhas quando diminuir o tamanho da tela*/
+}
+.menu li a {
+    color: #fff; /*mudando a cor das letras do li*/
+    display: block;/* transformando em elemento de caixa*/
+    text-decoration: none;/* tirando o sublinado dos links*/
+    margin-left: 10px;/*espaçamento a esquerda de cada li*/
+    padding:  10px 20px 10px 20px;/* aumentando o tamanho da caixa do link*/
+    border-radius: 10px;/* deixando a caixa arredondada*/
+}
+.menu li a:hover {
+    color: #fff; /*mudando a cor das letras do li*/
+    display: block;/* transformando em elemento de caixa*/
+    text-decoration: none;/* tirando o sublinado dos links*/
+    margin-left: 10px;/*espaçamento a esquerda de cada li*/
+    background-color: #333;/* quando passar o mouse muda a cor do link*/
+}
+/*fim do menu*/
+/*estilizando aonde o logo e a imagem irão ficar*/
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+/*fim da estilização do header*/
+/* estilizando o h1*/
+h1 {
+    color: #fff;/*cor das letras*/
+    text-align: center;/* deixando o texto alinhado ao meio da página*/
+    margin-top: 20px 0px 20px 0px;/*deixando o espaço definido para o h1*/
+}
+/*fim*/
+/*estilizando o container*/
+.container {
+    height: auto;
+    max-width: 1200px;/*definindo a largura máxima */
+    margin: 10px 10px 40px 10px;/*deixando sempre centralizado*/
+    border: 0px solid #fff;/* poder ver a divisão do container*/
+    padding: 0px 20px 0px 20px;/*espaçamento para não ficar colado os componetes do container*/
+    justify-content: center;/*deixar sempre centralizador o container*/
+    display: grid;/*nada acontece até ser adicionado o template*/
+    /*indicando o formato que quero ao grid*/
+    grid-template-areas:/* melhor informar com o nome das divs ou seçôes*/
+    "sidnev item item"
+    "sidnev item item"
+    "sidnev item item"
+    "footer footer footer";
+    grid-gap: 20px;/* espçamento entra o sidnev,item e footer*/
+}
+/*estilizando a imagem*/
+img {
+    width: 100%;/* não deixa estoura a largura da div*/
+    border-radius: 20px;/* bordas arredondadas*/
+}
+/*fim*/
+/* estilizando sidnev*/
+.sidnev {
+    
+    width: 700px;               /*largura 300px*/
+    height: 900px;              /*altura 900px*/
+    border-radius: 20px;        /*borda arredondada*/
+    grid-area: "sidnev"; /*seguindo o grid-template-areas*/
+    grid-row: sidnev;/* mesclando as linhas do sidnev*/
+} 
+.sidnev a {
+    padding: 5px;
+    padding-left: 80%;
+    color: black;
+    display: block;/* transformando em elemento de caixa*/
+    text-decoration: none;/* tirando o sublinado dos links*/
+    border-radius: 10px;/* deixando a caixa arredondada*/
+}
+.sidnev a:hover {
+   color: aqua;
+    display: block;/* transformando em elemento de caixa*/
+    text-decoration: none;/* tirando o sublinado dos links*/
+    background-color: #333;/* quando passar o mouse muda a cor do link*/
+}
+
+/*fim*/
+/*estilizando o item*/
+.item {
+    margin-top: 10px;
+    padding: 5px;
+    width: 150px;               /*largura 300px*/
+    height: 150px;              /*altura 300px*/
+    
+    border-radius: 20px;        /*borda arredondada*/
+    grid-area: "item"; /*seguindo o grid-template-areas*/
+    justify-content: center;/*deixar sempre centralizador o container*/
+
+}
+.foto {
+    padding: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+.footer{
+    margin:auto;
+    width: 100%;
+    height: auto;
+    background-color: #101010;/*cor backgrond do header*/
+    padding: 10px;
+    display: flex;
+    align-items: center;/* centralizando os itens do header*/
+    justify-content: space-between;/*deixar o menu nos extremos*/
+    flex-wrap: wrap;/* quebra as linhas quando diminuir o tamanho da tela*/
+    color: #fff;
+}
+
+/*deixando responsivo*/
+@media (max-width: 1080px) {/*quando chegar na largura da tela em 820px ele irá ajustar os itens a seguir*/
+    .container {
+        /*indicando o formato que quero ao grid*/
+        grid-template-areas:/* melhor informar com o nome das divs ou seçôes*/
+        "sidnev item"
+        "sidnev item"
+        "sidnev item"
+        "sidnev item"
+        "sidnev item"
+        "sidnev item";
+       
+    }
+    header {
+        height: auto;
+    }
+}
+@media (max-width: 880px) {/*quando chegar na largura da tela em 520px ele irá ajustar os itens a seguir*/
+    .sidnev {
+        width: 700px;
+        height: auto;/*deixando o sidnev do mesmo tamnho que os itens*/
+    }
+ 
+    .container {
+        max-width: 1200px;/*definindo a largura máxima */
+        margin: 0 auto;/*deixando sempre centralizado*/ 
+        border: 1px solid #fff;/* poder ver a divisão do container*/
+        padding: 10px;/*espaçamento para não ficar colado os componetes do container*/
+        justify-content: center;/*deixar sempre centralizador o container*/
+        display: flex;/*nada acontece até ser adicionado o flex-wrap*/
+        flex-wrap: wrap;/*mostra que ele deve quebrar*/
+             
+    }
+    .container div{
+        flex-grow: 1;/*serve para ajustar o flex-item dentro de um container maior*/
+        flex-shrink: 10px;/*serve para ajustar o tamanho minímo dentro flex-item dentro de um container maior*/
+        flex-basis: px;/*serve para ajustar o tamanho minímo dentro que ele deve alcançar flex-item dentro de um container maior*/
+    }
+}
